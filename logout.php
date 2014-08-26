@@ -2,8 +2,12 @@
 
 	session_start();
 	
-		unset($_SESSION["user_auth"]); 
-		header("Location: login.php");
+	if ($_SESSION['user_auth'] == true){
+		header('Location:' . 'http://localhost:8888/exercise3_1/login.html');
+	} else {
+		echo "Here";
+	}
+
 
 		//call auth.php from here
 		//see if session variable is set
